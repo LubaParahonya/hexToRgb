@@ -6,7 +6,8 @@ export default function Color() {
     const [color, setColor] = useState('')
 
     const inputValue = (e) => {
-        setValue(e.target.value)     
+        setValue(e.target.value) 
+        setColor(e.target.value)    
     }
 
     const styleBackground = (color) =>{
@@ -35,7 +36,7 @@ export default function Color() {
   return (
     <div >
       <input name='colorHEX'onChange={inputValue} />
-      <input name='colorHEX' value={hexToFgb()} onChange={styleBackground(inputValue)}/>
+      <input name='colorHEX' value={hexToFgb()} onChange={()=>styleBackground(inputValue)}/>
     </div>
   )
    
